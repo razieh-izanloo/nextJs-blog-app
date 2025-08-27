@@ -1,0 +1,18 @@
+@import "../styles/variabels.scss";
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "vazirFont";
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+a {
+  text-decoration: none;
+}
