@@ -1,0 +1,48 @@
+.home-page {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  h1 {
+    font-weight: bold;
+    font-size: 24px !important;
+    line-height: 32px;
+    margin: 16px 0;
+    color: var(--secondary-700);
+  }
+  p {
+    color: var(--secondary-500);
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .btn--outline {
+    a {
+      color: var(--secondary-400);
+    }
+  }
+  .btn--primary {
+    a {
+      color: white;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .home-page {
+    h1 {
+      font-size: 48px !important;
+    }
+    p {
+      width: 70%;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .home-page {
+    p {
+      width: 50%;
+    }
+  }
+}
