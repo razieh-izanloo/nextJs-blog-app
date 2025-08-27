@@ -1,0 +1,19 @@
+.btn--outline {
+  border: 1px solid var(--secondary-300);
+  color: var(--secondary-400);
+}
+
+.btn--primary {
+  color: white;
+  background-color: var(--primary-900);
+}
+
+button {
+  border: 0;
+  border-radius: 5px;
+  outline: 0;
+  padding: 9px 10px;
+  &:hover {
+    opacity: 0.8;
+  }
+}
