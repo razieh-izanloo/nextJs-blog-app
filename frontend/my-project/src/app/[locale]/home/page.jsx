@@ -1,5 +1,5 @@
 import { serverSideTranslation } from "lib/i18n/initTranslations";
-import { Button } from "@/components/button";
+import { Button } from "@/components/button/button";
 import Link from "next/link";
 import "./page.scss";
 
