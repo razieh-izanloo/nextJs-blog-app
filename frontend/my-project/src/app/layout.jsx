@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import 'react-loading-skeleton/dist/skeleton.css'
+import "react-loading-skeleton/dist/skeleton.css";
 import vazirFont from "@/constants/localFont";
 import "./globals.scss";
 import { headers } from "next/headers";
@@ -11,14 +11,13 @@ export const metadata = {
 };
 
 async function RootLayout({ children, params }) {
-  console.log(await params)
-   const headersList = await headers();
-  const locale = headersList.get('x-next-i18n-router-locale');
+  const headersList = await headers();
+  const locale = headersList.get("x-next-i18n-router-locale");
 
   return (
-    <html lang={locale} dir="auto" >
+    <html lang={locale} dir="auto">
       <body className={`min-vh-100  ${vazirFont.variable} font-sans `}>
-        <Header/>
+        <Header />
         {children}
       </body>
     </html>
