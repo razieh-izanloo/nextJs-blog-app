@@ -29,7 +29,7 @@ export const LanguageSelector = () => {
     if (initialCurrentLang !== currentLang) setCurrentLang(initialCurrentLang);
   }, [initialCurrentLang]);
 
-console.log(currentLang)
+
   return (
     <div className="position-relative inline-block section-languageSelector">
       <button onClick={() => setIsOpen(!isOpen)}>

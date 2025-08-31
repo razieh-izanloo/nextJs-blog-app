@@ -18,7 +18,7 @@ async function RootLayout({ children, params }) {
   return (
     <html lang={locale} dir="auto" >
       <body className={`min-vh-100  ${vazirFont.variable} font-sans `}>
-        <Header locale={locale}/>
+        <Header/>
         {children}
       </body>
     </html>

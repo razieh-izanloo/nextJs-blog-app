@@ -1,19 +1,20 @@
 "use client";
 
+import Skeleton from "react-loading-skeleton";
 import { NavLink } from "./navLink";
 // import { useAuth } from "@/context/AuthContext";
 import { LanguageSelector } from "@/components/languageSelector/languageSelector";
-import "./index.scss";
 import { useClientSideTranslation } from "@/lib/i18n/useClientSideTranslation";
-import Skeleton from "react-loading-skeleton";
+import { useGetCurrentLang } from "@/hooks/useGetCurrentLang";
+import "./index.scss";
 
-export const Header = (props) => {
+export const Header = () => {
   //   const { user, isLoading } = useAuth();
-  const { locale } = props;
+  const  locale  = useGetCurrentLang();
   let user = false;
   const isLoading = false;
   const { t } = useClientSideTranslation(locale, ["header"]);
-  console.log(t);
+console.log(t)
   const navLinks = [
     {
       id: 1,
