@@ -14,7 +14,7 @@ export const Header = () => {
   let user = false;
   const isLoading = false;
   const { t } = useClientSideTranslation(locale, ["header"]);
-console.log(t)
+
   const navLinks = [
     {
       id: 1,
