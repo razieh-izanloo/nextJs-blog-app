@@ -2,5 +2,6 @@
   "title": "Blog Management App",
   "description": "A place where you can manage a complete blog app! Create blogs, leave comments, and track all the events in your panel!",
   "studyBlog": "Study Blogs",
-  "manageBlog": "Blog Management"
+  "manageBlog": "Blog Management",
+  "titlePage": "Home | Blog Web Application"
 }

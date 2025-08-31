@@ -3,6 +3,18 @@ import { Button } from "@/components/button/button";
 import Link from "next/link";
 import "./page.scss";
 
+
+export async function generateMetadata({params}) {
+  const { locale } = await params;
+  const { t } = await serverSideTranslation(locale, ["home"]);
+
+  return {
+    title:{
+      absolute: t("titlePage")
+    }
+  };
+}
+
 const HomePage = async ({ params }) => {
   const { locale } = await params;
   const { t } = await serverSideTranslation(locale, ["home"]);
