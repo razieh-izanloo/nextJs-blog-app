@@ -11,7 +11,7 @@ export function middleware(request) {
   // for use locale in client-component
   const cookieLocale = request.cookies.get("NEXT_LOCALE");
   if (cookieLocale !== locale) response.cookies.set("NEXT_LOCALE", locale);
-console.log("loaaaaaad", locale)
+
   if (pathname === "/")
     return NextResponse.redirect(new URL("/home", request.url));
 
