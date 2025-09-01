@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { PostList } from "./_components/postList";
+import { PostList } from "./_components/post/postList";
 import { Spinner } from "@/components/spinner/spinner";
 
 const BlogPage = async () => {
