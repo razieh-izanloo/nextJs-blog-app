@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ClockIcon } from "@heroicons/react/24/outline";
 import "./cardPost.scss";
 import { Author } from "@/components/author";
+import { PostInteraction } from "./postInteraction";
 
 export const CardPost = (props) => {
   const { item } = props;
@@ -21,7 +22,7 @@ export const CardPost = (props) => {
             alt={item.title}
           />
         </Link>
-        <div className="card-body">
+        <div className="card-body pb-2">
           <Link href="/">
             <h2 className="display-6 mb-3 text">{item.title}</h2>
           </Link>
@@ -36,7 +37,7 @@ export const CardPost = (props) => {
               </div>
             </div>
           </div>
-          {/* <PostInteraction post={post} /> */}
+          <PostInteraction post={item} />
         </div>
       </div>
     </div>
