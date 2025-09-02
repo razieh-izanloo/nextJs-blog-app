@@ -12,7 +12,7 @@ export async function generateMetadata() {
   const { t } = await serverSideTranslation(locale, ["rootLayout"]);
   return {
     title: {
-      template: `%S |  ${t("title")}`,
+      template: `%s |  ${t("title")}`,
       default: t("title"),
     },
     description: t("description"),
