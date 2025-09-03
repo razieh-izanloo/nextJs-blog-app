@@ -3,7 +3,7 @@ import "./spinner.scss";
 export const Spinner = () => {
   return (
     <div className="w-100 d-flex justify-content-center">
-      <div class="lds-roller">
+      <div className="lds-roller">
         {Array.from({ length: 8 }).map((_, index) => (
           <div key={index}></div>
         ))}
