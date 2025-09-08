@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-loading-skeleton/dist/skeleton.css";
+import { Toaster } from "react-hot-toast";
 import { headers } from "next/headers";
 import { serverSideTranslation } from "@/lib/i18n/initTranslations";
 import vazirFont from "@/constants/localFont";
@@ -26,6 +27,7 @@ async function RootLayout({ children, params }) {
   return (
     <html lang={locale} dir="auto">
       <body className={`min-vh-100  ${vazirFont.variable} font-sans `}>
+        <Toaster />
         <Header />
         {children}
       </body>
