@@ -2,6 +2,9 @@ import { Suspense } from "react";
 import { PostList } from "../_components/post/postList";
 import { Spinner } from "@/components/spinner/spinner";
 
+export  const revalidate = 10;
+export const experimental_ppr = true;
+
 const BlogPage = async () => {
   return (
     <>
