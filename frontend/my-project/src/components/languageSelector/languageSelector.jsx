@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import "./languageSelector.scss";
-import { useGetCurrentLang } from "hooks/useGetCurrentLang";
+import { useGetCurrentLang } from "@/hooks/useGetCurrentLang";
 
 export const LanguageSelector = () => {
   const [isOpen, setIsOpen] = useState(false);

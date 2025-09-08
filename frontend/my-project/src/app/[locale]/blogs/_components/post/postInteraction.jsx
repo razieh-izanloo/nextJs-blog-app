@@ -13,7 +13,7 @@ import {
   HeartIcon as SolidHeartIcon,
   BookmarkIcon as SolidBookmarkIcon,
 } from "@heroicons/react/24/solid";
-import { toPersianDigits } from "helper/numberFormatter";
+import { toPersianDigits } from "@/helper/numberFormatter";
 import { useRouter } from "next/navigation";
 
 // import toast from "react-hot-toast";
