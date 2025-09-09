@@ -1,32 +1,24 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-loading-skeleton/dist/skeleton.css";
 import { Toaster } from "react-hot-toast";
-import { headers } from "next/headers";
-import { serverSideTranslation } from "@/lib/i18n/initTranslations";
 import vazirFont from "@/constants/localFont";
 import { Header } from "@/components/header/index";
 import AuthProvider from "@/context/authContext";
 import "./globals.scss";
 
-export async function generateMetadata() {
-  const headersList = await headers();
-  const locale = headersList.get("x-next-i18n-router-locale");
-  const { t } = await serverSideTranslation(locale, ["rootLayout"]);
+export function generateMetadata() {
   return {
     title: {
-      template: `%s |  ${t("title")}`,
-      default: t("title"),
+      template: `%s |  بلاگ اپ`,
+      default: "بلاگ اپ",
     },
-    description: t("description"),
+    description: "وب اپلیکیشن بلاگ ها و مدیریت نظرات",
   };
 }
 
 async function RootLayout({ children, params }) {
-  const headersList = await headers();
-  const locale = headersList.get("x-next-i18n-router-locale");
-
   return (
-    <html lang={locale} dir="auto">
+    <html lang="fa" dir="rtl">
       <body className={`min-vh-100  ${vazirFont.variable} font-sans `}>
         <AuthProvider>
           <Toaster />

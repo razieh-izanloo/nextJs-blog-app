@@ -1,8 +1,8 @@
-import HomePage from "./[locale]/home/page";
+import HomePage from "./home/page";
 
-export async function generateStaticParams() {
-  return [{ locale: "en" }, { locale: "fa" }];
-}
+// export async function generateStaticParams() {
+//   return [{ locale: "en" }, { locale: "fa" }];
+// }
 
 const Home = () => {
   return <HomePage />;
