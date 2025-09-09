@@ -1,27 +1,22 @@
 "use client";
 
-import Skeleton from "react-loading-skeleton";
 import { NavLink } from "./navLink";
-import { useAuth } from "@/context/AuthContext";
+import { useAuth } from "@/context/authContext";
 import { LanguageSelector } from "@/components/languageSelector/languageSelector";
-import { useClientSideTranslation } from "@/lib/i18n/useClientSideTranslation";
-import { useGetCurrentLang } from "@/hooks/useGetCurrentLang";
 import "./index.scss";
 
 export const Header = () => {
   const { user, isLoading } = useAuth();
-  const locale = useGetCurrentLang();
-  const { t } = useClientSideTranslation(locale, ["header"]);
 
   const navLinks = [
     {
       id: 1,
-      label: "home",
+      label: "خانه",
       path: "/",
     },
     {
       id: 2,
-      label: "blogs",
+      label: "بلاگ ها",
       path: "/blogs",
     },
   ];
@@ -35,21 +30,15 @@ export const Header = () => {
             {navLinks.map((navLink) => {
               return (
                 <li key={navLink.id}>
-                  <NavLink path={navLink.path}>
-                    {t ? t(navLink.label) : <Skeleton width="20px" />}
-                  </NavLink>
+                  <NavLink path={navLink.path}>{navLink.label}</NavLink>
                 </li>
               );
             })}
             <li>
               {user ? (
-                <NavLink path="/profile">
-                  {t ? t("profile") : <Skeleton width="20px" />}
-                </NavLink>
+                <NavLink path="/profile">پروفایل</NavLink>
               ) : (
-                <NavLink path="/signin">
-                  {t ? t("signin") : <Skeleton width="20px" />}
-                </NavLink>
+                <NavLink path="/signin">ورود</NavLink>
               )}
             </li>
           </div>
