@@ -1,13 +1,11 @@
 "use client";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-import { useRouter } from "next/navigation";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Link from "next/link";
-import toast from "react-hot-toast";
-import { signinApi } from "@/services/authService";
 import { RHFTextField } from "@/components/textField/RHFTextField";
 import { Button } from "@/components/button/button";
+import { useAuth } from "@/context/authContext";
 
 const schema = yup
   .object({
@@ -26,21 +24,15 @@ const SigninPage = () => {
     mode: "onTouched",
   });
 
-  const router = useRouter();
+  const { signin } = useAuth();
 
   const onSubmit = async (values) => {
-    try {
-      const { message, user } = await signinApi(values);
-      toast.success(message);
-      router.push("/profile");
-    } catch (error) {
-      toast.error(error?.response?.data?.message);
-    }
+    await signin(values);
   };
 
   return (
     <div>
-      <h1 className="text-center fs-3 mb-4">ثبت نام</h1>
+      <h1 className="text-center fs-3 mb-4">ورود</h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="d-flex flex-column gap-3"

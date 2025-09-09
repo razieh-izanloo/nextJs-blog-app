@@ -5,6 +5,7 @@ import { headers } from "next/headers";
 import { serverSideTranslation } from "@/lib/i18n/initTranslations";
 import vazirFont from "@/constants/localFont";
 import { Header } from "@/components/header/index";
+import AuthProvider from "@/context/authContext";
 import "./globals.scss";
 
 export async function generateMetadata() {
@@ -27,9 +28,11 @@ async function RootLayout({ children, params }) {
   return (
     <html lang={locale} dir="auto">
       <body className={`min-vh-100  ${vazirFont.variable} font-sans `}>
-        <Toaster />
-        <Header />
-        {children}
+        <AuthProvider>
+          <Toaster />
+          <Header />
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
