@@ -54,16 +54,15 @@ const SigninPage = () => {
           isRequired
           errors={errors}
         />
-        <div>
-          {isLoading ? (
-            // <SpinnerMini />
-            <>loading</>
-          ) : (
-            <Button type="submit" variant="primary" className="w-100">
-              تایید
-            </Button>
-          )}
-        </div>
+
+        <Button
+          type="submit"
+          disable={isLoading.toString()}
+          variant="primary"
+          className="w-100"
+        >
+          تایید
+        </Button>
       </form>
       <Link href="/signup" className="link-footer mt-4 text-center">
         ثبت نام

@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Link from "next/link";
-// import SpinnerMini from "@/ui/SpinnerMini";
 import { RHFTextField } from "@/components/textField/RHFTextField";
 import { Button } from "@/components/button/button";
 import { useAuth } from "@/context/authContext";
@@ -67,16 +66,14 @@ function Signup() {
           isRequired
           errors={errors}
         />
-        <div>
-          {isLoading ? (
-            // <SpinnerMini />
-            <>loading</>
-          ) : (
-            <Button type="submit" variant="primary" className="w-100">
-              تایید
-            </Button>
-          )}
-        </div>
+        <Button
+          type="submit"
+          disable={isLoading.toString()}
+          variant="primary"
+          className="w-100"
+        >
+          تایید
+        </Button>
       </form>
       <Link href="/signin" className="link-footer mt-4 text-center">
         ورود
