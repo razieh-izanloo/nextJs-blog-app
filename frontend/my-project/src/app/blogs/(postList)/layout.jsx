@@ -7,7 +7,7 @@ export const metadata = {
   title: "بلاگ ها",
 };
 
-async function BlogLayout({ children, params }) {
+ function BlogLayout({ children }) {
   return (
     <div className="d-flex justify-content-center">
       <div className="layout-blog">

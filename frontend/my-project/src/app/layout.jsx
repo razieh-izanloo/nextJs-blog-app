@@ -16,7 +16,7 @@ export function generateMetadata() {
   };
 }
 
-async function RootLayout({ children, params }) {
+function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
       <body className={`min-vh-100  ${vazirFont.variable} font-sans `}>

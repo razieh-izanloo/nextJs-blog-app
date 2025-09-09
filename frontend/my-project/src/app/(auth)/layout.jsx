@@ -1,8 +1,7 @@
 import Image from "next/image";
 import "./layout.scss";
 
-export default async function AuthLayout({ children }) {
-
+export default function AuthLayout({ children }) {
   return (
     <div className="container">
       <div className="w-100 d-flex col-md-4 col-lg-3 bg-white">
