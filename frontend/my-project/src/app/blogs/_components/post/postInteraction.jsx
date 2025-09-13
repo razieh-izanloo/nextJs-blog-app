@@ -1,7 +1,7 @@
 "use client";
 
 import { ButtonIcon } from "@/components/buttonIcon/buttonIcon";
-// import { bookmarkPostApi, likePostApi } from "@/services/postServices";
+import { bookmarkPostApi, likePostApi } from "@/services/postServices";
 
 import {
   BookmarkIcon,
@@ -15,31 +15,31 @@ import {
 } from "@heroicons/react/24/solid";
 import { toPersianDigits } from "@/helper/numberFormatter";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
-// import toast from "react-hot-toast";
 
 export const PostInteraction = ({ post }) => {
   const router = useRouter();
 
-  // const likeHandler = async (postId) => {
-  //   try {
-  //     const { message } = await likePostApi(postId);
-  //     toast.success(message);
-  //     router.refresh();
-  //   } catch (error) {
-  //     toast.error(error?.response?.data?.message);
-  //   }
-  // };
+  const likeHandler = async (postId) => {
+    try {
+      const { message } = await likePostApi(postId);
+      toast.success(message);
+      router.refresh();
+    } catch (error) {
+      toast.error(error?.response?.data?.message);
+    }
+  };
 
-  // const bookmarkHandler = async (postId) => {
-  //   try {
-  //     const { message } = await bookmarkPostApi(postId);
-  //     toast.success(message);
-  //     router.refresh();
-  //   } catch (error) {
-  //     toast.error(error?.response?.data?.message);
-  //   }
-  // };
+  const bookmarkHandler = async (postId) => {
+    try {
+      const { message } = await bookmarkPostApi(postId);
+      toast.success(message);
+      router.refresh();
+    } catch (error) {
+      toast.error(error?.response?.data?.message);
+    }
+  };
 
   return (
     <div className="d-flex align-items-center gap-2">
