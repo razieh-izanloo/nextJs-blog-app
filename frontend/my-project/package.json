@@ -17,6 +17,7 @@
     "i18next-resources-to-backend": "^1.2.1",
     "next": "^15.5.1-canary.32",
     "next-i18n-router": "^5.5.3",
+    "query-string": "^9.3.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-hook-form": "^7.62.0",
