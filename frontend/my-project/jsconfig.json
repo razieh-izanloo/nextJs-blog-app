@@ -9,6 +9,7 @@
       "@/services/*": ["services/*"],
       "@/helper/*": ["helper/*"],
       "@/context/*": ["context/*"],
+      "@/utils/*": ["utils/*"],
     }
   }
 }
