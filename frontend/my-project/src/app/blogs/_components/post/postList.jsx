@@ -1,8 +1,12 @@
 import { getPosts } from "@/services/postServices";
 import { CardPost } from "./cardPost";
+import { setCookieOnReq } from "@/utils/setCookieOnReq";
+import { cookies } from "next/headers";
 
 export const PostList = async () => {
-  const posts = await getPosts();
+  const cookieStore = cookies();
+  const options = setCookieOnReq(cookieStore);
+  const posts = await getPosts(options);
 
   return (
     <>
