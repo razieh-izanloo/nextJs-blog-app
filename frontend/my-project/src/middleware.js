@@ -1,9 +1,29 @@
 // import { i18nRouter } from "next-i18n-router";
 // import { i18nConfig } from "./lib/i18n/i18n";
 import { NextResponse } from "next/server";
+import { middlewareAuth } from "@/utils/middlewareAuth";
 
-export function middleware(request) {
+export async function middleware(request) {
   const { pathname } = request.nextUrl;
+
+  // Auth---------------------------------------------------------------
+  if (pathname.startsWith("/signin") || pathname.startsWith("/signup")) {
+    const user = await middlewareAuth(request);
+    console.log("signin", user);
+    if (user) return NextResponse.redirect(new URL("/home", request.nextUrl));
+  }
+
+  if (pathname.startsWith("/profile")) {
+    console.log("profile");
+    const user = await middlewareAuth(request);
+    if (!user) {
+      return NextResponse.redirect(new URL("/signin", request.nextUrl));
+    }
+  }
+
+  if (pathname === "/")
+    return NextResponse.redirect(new URL("/home", request.nextUrl));
+
   // i18n------------------------------------------------------------
   // const i18nRouterValue = i18nRouter(request, i18nConfig);
   // const locale = i18nRouterValue.headers.get("x-next-i18n-router-locale");
@@ -14,12 +34,8 @@ export function middleware(request) {
   // if (cookieLocale !== locale) response.cookies.set("NEXT_LOCALE", locale);
   // return i18nRouterValue;
   // -----------------------------------------------------------------------
-
-  if (pathname === "/")
-    return NextResponse.redirect(new URL("/home", request.url));
-
 }
 
 export const config = {
-  matcher: "/((?!api|static|.*\\..*|_next).*)",
+  matcher: ["/", "/profile/:path*", "/signin", "/signup"],
 };
