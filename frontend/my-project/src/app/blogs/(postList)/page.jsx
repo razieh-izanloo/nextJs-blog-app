@@ -1,11 +1,12 @@
-import { Suspense } from "react";
+import { cookies } from "next/headers";
 import { PostList } from "../_components/post/postList";
-import { Spinner } from "@/components/spinner/spinner";
-
-export  const revalidate = 10;
-export const experimental_ppr = true;
+import { getPosts } from "@/services/postServices";
+import { setCookieOnReq } from "@/utils/setCookieOnReq";
 
 const BlogPage = async () => {
+  const cookieStore = cookies();
+  const options = setCookieOnReq(cookieStore);
+  const posts = await getPosts(options);
   return (
     <>
       <p>
@@ -20,9 +21,7 @@ const BlogPage = async () => {
         رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
         پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
       </p>
-      <Suspense fallback={<Spinner />}>
-        <PostList />
-      </Suspense>
+      <PostList posts={posts} />
     </>
   );
 };

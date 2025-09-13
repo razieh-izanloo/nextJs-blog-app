@@ -1,13 +1,6 @@
-import { getPosts } from "@/services/postServices";
 import { CardPost } from "./cardPost";
-import { setCookieOnReq } from "@/utils/setCookieOnReq";
-import { cookies } from "next/headers";
 
-export const PostList = async () => {
-  const cookieStore = cookies();
-  const options = setCookieOnReq(cookieStore);
-  const posts = await getPosts(options);
-
+export const PostList = ({posts}) => {
   return (
     <>
       {posts?.length > 0 ? (
