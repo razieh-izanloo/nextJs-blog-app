@@ -42,7 +42,7 @@ const AuthProvider = ({ children }) => {
       const { message, user } = await signinApi(values);
       dispatch({ type: "signin", payload: user });
       toast.success(message);
-      // router.push("/profile");
+      router.push("/profile");
     } catch (error) {
       const errorMsg = error?.response?.data?.message;
       toast.error(errorMsg);
