@@ -9,5 +9,5 @@ export const signinApi = async(data) => {
 };
 
 export const getUserApi = async(data) => {
-  return http.post("/user/profile", data).then(({ data }) => data.data);
+  return http.get("/user/profile", data).then(({ data }) => data.data);
 };
