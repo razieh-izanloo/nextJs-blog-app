@@ -2,7 +2,7 @@
 
 import { NavLink } from "./navLink";
 import { useAuth } from "@/context/authContext";
-import { LanguageSelector } from "@/components/languageSelector/languageSelector";
+// import { LanguageSelector } from "@/components/languageSelector/languageSelector";
 import "./index.scss";
 
 export const Header = () => {
@@ -25,7 +25,7 @@ export const Header = () => {
     <header className={isLoading ? "isLoading" : ""}>
       <nav className="w-100">
         <ul className="d-flex align-items-center justify-content-between p-3">
-          <LanguageSelector />
+          {/* <LanguageSelector /> */}
           <div className="d-flex align-items-center gap-3">
             {navLinks.map((navLink) => {
               return (
