@@ -7,7 +7,7 @@ export const Avatar = ({ src, width = 24 }) => {
       width={width}
       height={width}
       className="rounded-5 border border-secondary"
-      alt={src}
+      alt={src || ""}
     />
   );
 };
