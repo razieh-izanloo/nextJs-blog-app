@@ -1,4 +1,4 @@
-header {
+.header-rootLayout {
   display: flex;
   justify-content: center;
   z-index: 1;
@@ -22,7 +22,7 @@ header {
 }
 
 @media screen and (min-width: 1200px) {
-  header {
+  .header-rootLayout {
     nav {
       max-width: 1200px;
     }

@@ -20,11 +20,8 @@ function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
       <body className={`min-vh-100  ${vazirFont.variable} font-sans `}>
-        <AuthProvider>
-          <Toaster />
-          <Header />
-          {children}
-        </AuthProvider>
+        <Toaster />
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );

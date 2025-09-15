@@ -1,0 +1,77 @@
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  height: 100vh;
+  aside {
+    display: none;
+  }
+  .warpper {
+    display: flex;
+    height: 100vh;
+    grid-column: span 12 / span 12;
+    flex-direction: column;
+
+    main {
+      background-color: var(-secondary-100);
+      padding: 16px;
+      flex: 1 1 0%;
+      overflow-y: auto;
+      border-top-right-radius: 24px;
+    }
+
+    //header
+    .header-dashboard-layout {
+      background-color: white;
+    }
+    header {
+      .isLoading-heade {
+        opacity: 0.3;
+      }
+      .user-name {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-weight: 700;
+        color: var(-secondary-700);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .dashboard-layout {
+    .warpper {
+      grid-column: span 9 / span 9;
+      main {
+        padding: 24px;
+      }
+    }
+    .header-dashboard-layout {
+      margin-right: 250px;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .dashboard-layout {
+    aside {
+      display: block;
+      grid-column: span 3 / span 3;
+    }
+    .warpper {
+      grid-column: span 9 / span 9;
+      main {
+        padding: 40px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .dashboard-layout {
+    aside {
+      grid-column: span 2 / span 2;
+    }
+  }
+  .warpper {
+    grid-column: span 10 / span 10;
+  }
+}
