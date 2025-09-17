@@ -9,15 +9,10 @@ export const metadata = {
 
 const DashboardLayout = ({ children }) => {
   return (
-      <div className="dashboard-layout">
-        {/* <aside>
-          <SideBar />
-        </aside> */}
-        <div className="warpper">
-          <Header />
-          <main>{children}</main>
-        </div>
-      </div>
+    <div className="dashboard-layout">
+      <Header />
+      <main>{children}</main>
+    </div>
   );
 };
 export default DashboardLayout;

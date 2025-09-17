@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { SideBar } from "./sideBar";
 import Drawer from "@/components/drawer/drawer";
+import "./header.scss";
 
 export const Header = ({}) => {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
@@ -14,8 +15,8 @@ export const Header = ({}) => {
 
   return (
     <header className={`${isLoading ? "isLoading-header" : ""}`}>
-      <div className="header-dashboard-layout d-flex align-items-center justify-content-between py-4 px-3  px-lg-4">
-        <div className="d-flex align-items-center g-2">
+      <div className="header-dashboard-layout py-4 px-3  px-lg-4">
+        <div className="d-flex align-items-center gap-2">
           <ButtonIcon
             className="d-block d-md-none border-0"
             variant="outline"
