@@ -1,0 +1,33 @@
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  th {
+    padding: 8px 16px;
+    color:var(--secondary-600);
+    font-size: 14px;
+  }
+
+  td,
+  th {
+    border-bottom: 1px solid var(--secondary-200);
+    text-align: right;
+    white-space: nowrap;
+    padding: 16px;
+  }
+
+  .title-row {
+    background-color:var(--secondary-100);
+  }
+  .badge-secondary {
+    width: fit-content;
+    background-color: var(--secondary-200);
+    color: var(--secondary-600);
+  }
+
+  .badge-success {
+    width: fit-content;
+    background-color: var(--green-500);
+    color: white;
+  }
+}
