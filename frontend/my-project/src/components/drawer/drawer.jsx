@@ -15,7 +15,7 @@ console.log(open)
   return createPortal(
     <>
       <div
-        className={`close-drawer ${open ? "isOpen" : "d-none d-md-block"}`}
+        className={`close-drawer ${open ? "isOpen" : "d-none"}`}
         onClick={onClose}
       ></div>
       <div
