@@ -5,6 +5,7 @@ import vazirFont from "@/constants/localFont";
 import { Header } from "@/components/header/index";
 import AuthProvider from "@/context/authContext";
 import "./globals.scss";
+import ReactQueryProvider from "providers/reactQueryProvider";
 
 export function generateMetadata() {
   return {
@@ -21,7 +22,9 @@ function RootLayout({ children }) {
     <html lang="fa" dir="rtl">
       <body className={`min-vh-100  ${vazirFont.variable} font-sans `}>
         <Toaster />
-        <AuthProvider>{children}</AuthProvider>
+        <ReactQueryProvider>
+          <AuthProvider>{children}</AuthProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );
