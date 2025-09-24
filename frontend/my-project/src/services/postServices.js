@@ -34,3 +34,7 @@ export async function getAllPostsApi(queries, options = {}) {
     .get(`/post/list?${queries}`, options)
     .then(({ data }) => data.data);
 }
+
+export async function createPostApi(data) {
+  return http.post(`/post/create`, data).then(({ data }) => data.data);
+}
