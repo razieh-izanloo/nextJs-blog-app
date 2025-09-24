@@ -10,6 +10,7 @@
       "@/helper/*": ["helper/*"],
       "@/context/*": ["context/*"],
       "@/utils/*": ["utils/*"],
+      "@/provider/*": ["provider/*"],
     }
   }
 }
