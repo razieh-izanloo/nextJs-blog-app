@@ -5,7 +5,7 @@ import "./drawer.scss";
 
 const Drawer = ({ open, onClose, children }) => {
   const [mounted, setMounted] = useState(false);
-console.log(open)
+
   useEffect(() => {
     setMounted(true);
   }, []);
