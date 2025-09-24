@@ -9,12 +9,10 @@ export async function middleware(request) {
   // Auth---------------------------------------------------------------
   if (pathname.startsWith("/signin") || pathname.startsWith("/signup")) {
     const user = await middlewareAuth(request);
-    console.log("signin", user);
     if (user) return NextResponse.redirect(new URL("/home", request.nextUrl));
   }
 
   if (pathname.startsWith("/profile")) {
-    console.log("profile");
     const user = await middlewareAuth(request);
     if (!user) {
       return NextResponse.redirect(new URL("/signin", request.nextUrl));
