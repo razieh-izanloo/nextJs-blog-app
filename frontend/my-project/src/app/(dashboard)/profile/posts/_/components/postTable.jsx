@@ -3,8 +3,8 @@ import { Table } from "@/components/table/table";
 import { getPosts } from "@/services/postServices";
 import { PostRow } from "./postRow";
 
-export const PostTable = async ({query = ""}) => {
-  const posts = await getPosts(query);
+export const PostTable = async ({ query = "" }) => {
+  const { posts } = await getPosts(query);
   if (!posts.length) return <Empty resourceName="پستی یافت نشد!" />;
   return (
     <>
