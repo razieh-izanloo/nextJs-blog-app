@@ -1,10 +1,9 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import "react-loading-skeleton/dist/skeleton.css";
 import { Toaster } from "react-hot-toast";
 import vazirFont from "@/constants/localFont";
-import { Header } from "@/components/header/index";
 import AuthProvider from "@/context/authContext";
-import "./globals.scss";
+import "../globals.css";
 import ReactQueryProvider from "providers/reactQueryProvider";
 
 export function generateMetadata() {
