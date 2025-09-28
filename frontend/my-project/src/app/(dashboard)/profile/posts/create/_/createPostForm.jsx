@@ -11,9 +11,12 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
+import "./style.scss";
+import { imageUrlToFile } from "@/utils/fileFormatter";
+import { useEditPost } from "@/hooks/useEditPost";
 
 const schema = yup
   .object({
@@ -40,41 +43,96 @@ const schema = yup
   })
   .required();
 
-export const CreatePostForm = () => {
+export const CreatePostForm = ({ postToEdit = {} }) => {
+  const { _id: editId } = postToEdit;
+  const isEditSession = Boolean(editId);
+  const {
+    title,
+    text,
+    briefText,
+    slug,
+    readingTime,
+    category,
+    coverImage,
+    coverImageUrl: prevPostCoverImageUrl,
+  } = postToEdit;
+  let editValues = {};
+  if (isEditSession) {
+    editValues = {
+      title,
+      text,
+      briefText,
+      slug,
+      readingTime,
+      category: category._id,
+      coverImage,
+    };
+  }
+
   const { categories } = useCategories();
-  const [coverImageUrl, setCoverImageUrl] = useState(null);
-  const {createPost, isCreating} = useCreatePost();
+  const { createPost, isCreating } = useCreatePost();
+  const { editPost, isEditing } = useEditPost();
+  const [coverImageUrl, setCoverImageUrl] = useState(
+    prevPostCoverImageUrl || null
+  );
+  const router = useRouter();
 
   const {
     register,
     formState: { errors },
-    handleSubmit,
-    control,
     setValue,
+    handleSubmit,
     reset,
+    control,
   } = useForm({
-    mode: "onTouched",
     resolver: yupResolver(schema),
+    mode: "onTouched",
+    defaultValues: editValues,
   });
 
-  const router = useRouter();
+  useEffect(() => {
+    if (prevPostCoverImageUrl) {
+      async function fetchMyAPI() {
+        const file = await imageUrlToFile(prevPostCoverImageUrl);
+        setValue("coverImage", file);
+      }
+      fetchMyAPI();
+    }
+  }, []);
 
-    const onSubmit = async (data) => {
+  const onSubmit = async (data) => {
     const formData = new FormData();
 
     for (const key in data) {
       formData.append(key, data[key]);
     }
+
+    if (isEditSession) {
+      editPost(
+        { id: editId, data: formData },
+        {
+          onSuccess: () => {
+            reset();
+            router.push("/profile/posts");
+          },
+        }
+      );
+    } else {
       createPost(formData, {
         onSuccess: () => {
           router.push("/profile/posts");
           reset();
         },
       });
-  }
+    }
+  };
+
   return (
     <div className="row">
-      <form className="form col-sm-8 col-lg-6 col-xl-5 col-xxl-4" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className="form col-sm-8 col-lg-6 col-xl-5 col-xxl-4"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <RHFTextField
           label="عنوان"
           name="title"
@@ -160,15 +218,14 @@ export const CreatePostForm = () => {
         )}
 
         <div>
-        {isCreating  ? (
-          <Spinner />
-        ) : (
-          <Button variant="primary" type="submit" className="w-100">
-            تایید
-          </Button>
-        )}
-      </div>
-       
+          {isCreating ? (
+            <Spinner />
+          ) : (
+            <Button variant="primary" type="submit" className="w-100">
+              تایید
+            </Button>
+          )}
+        </div>
       </form>
     </div>
   );

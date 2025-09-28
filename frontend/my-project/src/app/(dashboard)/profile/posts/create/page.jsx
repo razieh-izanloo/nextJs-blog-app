@@ -1,6 +1,5 @@
 import Breadcrumbs from "@/components/breadcrumbs/breadcrumbs";
 import { CreatePostForm } from "./_/createPostForm";
-import "./page.scss";
 
 const CreatePostPage = () => {
   return (
@@ -19,7 +18,7 @@ const CreatePostPage = () => {
           },
         ]}
       />
-      <CreatePostForm/>
+      <CreatePostForm />
     </div>
   );
 };
