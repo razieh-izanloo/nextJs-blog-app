@@ -34,7 +34,7 @@ export const PostRow = ({ post, index }) => {
       <td>
         <div className="d-flex align-items-center gap-3">
           <UpdatePost id={post._id} />
-          <DeletePost id={post._id} postTitle={post.title} />
+          <DeletePost post={post} />
         </div>
       </td>
     </Table.Row>

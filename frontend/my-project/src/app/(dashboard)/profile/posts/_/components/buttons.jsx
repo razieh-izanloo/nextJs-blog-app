@@ -1,7 +1,12 @@
 "use client";
 import { ButtonIcon } from "@/components/buttonIcon/buttonIcon";
+import { ConfirmDelete } from "@/components/ConfirmDelete";
+import { Modal } from "@/components/modal";
+import { useDeletePost } from "@/hooks/useDeletePost";
 import { PencilIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export function CreatePost() {
   return (
@@ -11,16 +16,41 @@ export function CreatePost() {
       transition-colors hover:bg-primary-700"
     >
       <span className="hidden md:block">ایجاد پست</span>{" "}
-      <PlusIcon className="w-5" width="18px"/>
+      <PlusIcon className="w-5" width="18px" />
     </Link>
   );
 }
 
-export const DeletePost = ({ id }) => {
+export const DeletePost = ({ post: { _id, title } }) => {
+  const [open, setOpen] = useState(false);
+  const { isDeleting, deletePost } = useDeletePost();
+  const router = useRouter();
+
   return (
-    <ButtonIcon variant="outline" onClick={() => console.log(id)}>
-      <TrashIcon className="text-danger" />
-    </ButtonIcon>
+    <>
+      <ButtonIcon variant="outline" onClick={() => setOpen(true)}>
+        <TrashIcon className="text-danger" />
+      </ButtonIcon>
+      <Modal title={`حذف ${title}`} open={open} onClose={() => setOpen(false)}>
+        <ConfirmDelete
+          resourceName={title}
+          onClose={() => setOpen(false)}
+          onConfirm={(e) => {
+            e.preventDefault();
+            deletePost(
+              { id: _id },
+              {
+                onSuccess: () => {
+                  setOpen(false);
+                  router.refresh("/profile/posts")
+                },
+              }
+            );
+          }}
+          disabled={isDeleting}
+        />
+      </Modal>
+    </>
   );
 };
 
