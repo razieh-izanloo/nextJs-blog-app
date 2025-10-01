@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+//custom color
+/* @theme {
+  --color-secondary-50: #f9fafb;
+} */
+
+/* @layer base {
+  :root {
+    &,
+    &.light-mode {
+      /* --color-secondary-50: #f9fafb; */
+      /* --color-secondary-50: 249, 250, 251; */
+      /* --background-app-rgb: 249, 250, 251; */
+    /* }
+  }
+} */ */
+
+/* @theme {
+  --color-regal-blue: red; 
+} */
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "vazirFont";
+  user-select: none;
+  background-color: #f9fafb;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+  margin: 0;
+}
