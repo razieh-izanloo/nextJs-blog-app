@@ -4,7 +4,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Link from "next/link";
 import { RHFTextField } from "@/components/textField/RHFTextField";
-import { Button } from "@/components/button/button";
+import { Button } from "@/components/button";
 import { useAuth } from "@/context/authContext";
 
 const schema = yup

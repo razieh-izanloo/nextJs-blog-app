@@ -1,5 +1,5 @@
 import { Avatar } from "@/components/avatar";
-import { Button } from "@/components/button/button";
+import { Button } from "@/components/button";
 import { ArrowUturnRightIcon } from "@heroicons/react/24/outline";
 
 export const Comment = ({ comment, onAddComment }) => {

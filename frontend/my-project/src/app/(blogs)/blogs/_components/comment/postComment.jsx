@@ -4,7 +4,7 @@ import classNames from "classnames";
 import { useRouter } from "next/navigation";
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
 import { useAuth } from "@/context/authContext";
-import { Button } from "@/components/button/button";
+import { Button } from "@/components/button";
 import { Modal } from "@/components/modal";
 import { CommentForm } from "./commentForm";
 import { Comment } from "./comment";

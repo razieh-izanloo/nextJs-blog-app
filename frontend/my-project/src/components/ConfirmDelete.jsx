@@ -1,5 +1,5 @@
 import { TrashIcon } from "@heroicons/react/24/outline";
-import { Button } from "./button/button";
+import { Button } from "./button";
 import { SubmitButton } from "./submitButton/submitButton";
 
 export const ConfirmDelete = ({

@@ -1,6 +1,6 @@
 import { useFormStatus } from "react-dom";
 import SvgLoaderComponent from "./SVGLoaderComponent";
-import { Button } from "@/components/button/button";
+import { Button } from "@/components/button";
 
 export const SubmitButton = ({ children, calssName, ...rest }) => {
   const { pending } = useFormStatus();
