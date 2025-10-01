@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ClockIcon } from "@heroicons/react/24/outline";
-import "./cardPost.scss";
 import { Author } from "@/components/author";
 import { PostInteraction } from "./postInteraction";
 
@@ -9,36 +8,34 @@ export const CardPost = (props) => {
   const { item } = props;
 
   return (
-    <div className="col-12 col-md-6 col-lg-4 my-2">
-      <div className="card card-post">
+    <div className="col-span-12 sm:col-span-6 lg:col-span-4 border border-secondary-300 p-2 rounded-lg">
+      <div className="relative aspect-video overflow-hidden rounded-md mb-6">
         <Link href={`/blogs/${item.slug}`} className="overflow-hidden">
           <Image
             src={item.coverImageUrl}
-            className="img-card"
-            quality={90}
-            sizes="100%"
-            width={0}
-            height={0}
             alt={item.title}
+            fill
+            className="object-cover object-center hover:scale-110 transition-all duration-300 ease-out"
+            quality={90}
           />
         </Link>
-        <div className="card-body pb-2">
-          <Link href="/">
-            <h2 className="display-6 mb-3 text">{item.title}</h2>
-          </Link>
-          <div className="d-flex align-items-center justify-content-between mb-4">
-            <Author {...item.author} />
-            <div className="d-flex align-items-center gap-1 info">
-              <ClockIcon />
-              <div className="d-flex gap-1">
-                <span> خواندن:</span>
-                <span>{item.readingTime}</span>
-                <span>دقیقه</span>
-              </div>
-            </div>
+      </div>
+      <div>
+        <Link href={`/blogs/${item.slug}`}>
+          <h2 className="mb-4 font-bold text-secondary-700 hover:text-primary-900 transition-all ease-out">
+            {item.title}
+          </h2>
+        </Link>
+        <div className="flex items-center justify-between mb-4">
+          <Author {...item.author} />
+          <div className="flex items-center text-[10px] text-secondary-500">
+            <ClockIcon className="w-4 h-4 stroke-secondary-500 ml-1" />
+            <span className="ml-1"> خواندن:</span>
+            <span className="ml-1 leading-3">{item.readingTime}</span>
+            <span>دقیقه</span>
           </div>
-          <PostInteraction post={item} />
         </div>
+        <PostInteraction post={item} />
       </div>
     </div>
   );

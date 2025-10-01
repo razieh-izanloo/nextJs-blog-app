@@ -1,4 +1,4 @@
-import { Header } from "@/components/header/index";
+import { Header } from "@/components/header";
 
 export function generateMetadata() {
   return {
@@ -14,7 +14,7 @@ export const BlogLayout = ({ children }) => {
   return (
     <>
       <Header />
-      {children}
+      <div className="container xl:max-w-screen-xl">{children}</div>
     </>
   );
 };

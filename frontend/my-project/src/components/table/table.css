@@ -1,0 +1,30 @@
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+table th {
+  padding: 8px 16px;
+  color: #4b5563;
+  font-size: 14px;
+}
+table td,
+table th {
+  border-bottom: 1px solid #e5e7eb;
+  text-align: right;
+  white-space: nowrap;
+  padding: 16px;
+}
+table .title-row {
+  background-color: #f3f4f6;
+}
+table .badge-secondary {
+  width: fit-content;
+  background-color: #e5e7eb;
+  color: #4b5563;
+}
+table .badge-success {
+  width: fit-content;
+  background-color: #00c951;
+  color: white;
+}

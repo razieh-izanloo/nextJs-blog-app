@@ -1,4 +1,4 @@
-import "./table.scss";
+import "./table.css";
 
 export const Table = ({ children }) => {
   return (
@@ -17,7 +17,7 @@ export const TableHeader = ({ children }) => {
 };
 
 export const TableBody = ({ children }) => {
-  return <tbody className="bg-white">{children}</tbody>;
+  return <tbody className="bg-secondary-0">{children}</tbody>;
 };
 
 export const TableRow = ({ children }) => {

@@ -2,29 +2,32 @@
 import Link from "next/link";
 import { useAuth } from "@/context/authContext";
 import { Avatar } from "@/components/avatar";
-import { ButtonIcon } from "@/components/buttonIcon/buttonIcon";
+import { ButtonIcon } from "@/components/buttonIcon";
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { SideBar } from "./sideBar";
 import Drawer from "@/components/drawer/drawer";
-import "./header.scss";
 
 export const Header = ({}) => {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
   const { user, isLoading } = useAuth();
 
   return (
-    <header className={`${isLoading ? "isLoading-header" : ""}`}>
-      <div className="header-dashboard-layout py-4 px-3  px-lg-4">
-        <div className="d-flex align-items-center gap-2">
+    <header
+      className={`bg-secondary-0 ${isLoading ? "bg-opacity-30 blur-md" : ""}`}
+    >
+      <div className="flex items-center justify-between bg-secondary-0 py-4 px-3  px-lg-4 md:mr-[250px]">
+        <div className="flex items-center gap-2">
           <ButtonIcon
-            className="d-block d-md-none border-0"
+            className="block md:hidden"
             variant="outline"
             onClick={() => setIsOpenDrawer(!isOpenDrawer)}
           >
             {isOpenDrawer ? <XMarkIcon /> : <Bars3Icon />}
           </ButtonIcon>
-          <span className="user-name">سلام؛ {user?.name}</span>
+          <span className="text-sm lg:text-lg font-bold text-secondary-700">
+            سلام؛ {user?.name}
+          </span>
         </div>
         <Link href="/profile">
           <Avatar src={user?.avatarUrl} />

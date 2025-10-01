@@ -8,10 +8,10 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { SideBarNavs } from "./sideBarNavs";
-import { ButtonIcon } from "@/components/buttonIcon/buttonIcon";
-import "./sidebar.scss";
+import { ButtonIcon } from "@/components/buttonIcon";
+import "./sidebar.css";
 
-export const SideBar = ({onClose}) => {
+export const SideBar = ({ onClose }) => {
   // const { logout } = useAuth();
 
   // const logoutHandler = async () => {
@@ -22,10 +22,10 @@ export const SideBar = ({onClose}) => {
     <div className="section-sidebar pt-lg-3">
       <div className="section-top">
         <Link href="/">
-          <HomeIcon className="icon" />
+          <HomeIcon className="w-6 h-6" />
           <span> نکست بلاگ</span>
         </Link>
-        <ButtonIcon onClick={onClose} className="d-block d-md-none border-0">
+        <ButtonIcon onClick={onClose} className="block md:none">
           <XMarkIcon />
         </ButtonIcon>
       </div>
@@ -35,7 +35,7 @@ export const SideBar = ({onClose}) => {
           // onClick={logoutHandler}
           className="section-bottom"
         >
-          <ArrowLeftStartOnRectangleIcon className="icon" />
+          <ArrowLeftStartOnRectangleIcon className="ml-2 h-5 w-5" />
           <span>خروج</span>
         </div>
       </div>

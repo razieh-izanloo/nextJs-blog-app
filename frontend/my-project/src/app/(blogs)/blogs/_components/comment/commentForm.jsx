@@ -28,7 +28,7 @@ export const CommentForm = ({ postId, parentId, onClose }) => {
   return (
     <div>
       <div className="flex justify-center mt-4">
-        <div className="max-w-md  w-full">
+        <div className="max-w-md w-full">
           <form
             className="space-y-7"
             action={async (formData) => {

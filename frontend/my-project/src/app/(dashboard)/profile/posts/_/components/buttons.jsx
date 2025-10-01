@@ -1,5 +1,5 @@
 "use client";
-import { ButtonIcon } from "@/components/buttonIcon/buttonIcon";
+import { ButtonIcon } from "@/components/buttonIcon";
 import { ConfirmDelete } from "@/components/ConfirmDelete";
 import { Modal } from "@/components/modal";
 import { useDeletePost } from "@/hooks/useDeletePost";

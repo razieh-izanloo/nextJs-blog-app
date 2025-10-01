@@ -18,7 +18,7 @@ const Category = async ({ params, searchParams }) => {
   return (
     <div>
       {posts.length === 0 ? (
-        <p className="text-lg text-secondary-600 ">
+        <p className="text-lg text-secondary-600">
           پستی در این دسته بندی پیدا نشد
         </p>
       ) : (

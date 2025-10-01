@@ -1,8 +1,8 @@
 "use client";
 
-import { ButtonIcon } from "@/components/buttonIcon/buttonIcon";
+import { ButtonIcon } from "@/components/buttonIcon";
 import { bookmarkPostApi, likePostApi } from "@/services/postServices";
-
+ 
 import {
   BookmarkIcon,
   ChatBubbleOvalLeftEllipsisIcon,
@@ -42,7 +42,7 @@ export const PostInteraction = ({ post }) => {
   };
 
   return (
-    <div className="d-flex align-items-center gap-2">
+    <div className="flex items-center gap-x-4">
       <ButtonIcon variant="secondary">
         <ChatBubbleOvalLeftEllipsisIcon />
         <span>{toPersianDigits(post.commentsCount)}</span>

@@ -74,6 +74,8 @@ const AuthProvider = ({ children }) => {
       dispatch({ type: "user/loaded", payload: user });
     } catch (error) {
       dispatch({ type: "rejected", payload: error?.response?.data?.message });
+    } finally {
+      dispatch({ type: "loading", payload: false });
     }
   }
 

@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/button";
-import { ButtonIcon } from "@/components/buttonIcon/buttonIcon";
+import { ButtonIcon } from "@/components/buttonIcon";
 import { FileInput } from "@/components/fileInput/fileInput";
 import { RHFSelect } from "@/components/RHFSelect/RHFSelect";
 import { Spinner } from "@/components/spinner/spinner";

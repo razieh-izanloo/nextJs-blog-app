@@ -6,8 +6,8 @@ export const Avatar = ({ src, width = 24 }) => {
       src={src || "/images/avatar.png"}
       width={width}
       height={width}
-      className="rounded-5 border border-secondary"
+      className="rounded-full ring-1 ring-secondary-200"
       alt={src || ""}
-    />
+    /> 
   );
 };

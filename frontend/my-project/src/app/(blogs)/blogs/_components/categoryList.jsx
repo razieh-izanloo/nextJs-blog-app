@@ -1,5 +1,4 @@
 import Link from "next/link";
-import "./categoryList.scss";
 
 export const CategoryList = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/category/list`);
@@ -9,11 +8,16 @@ export const CategoryList = async () => {
 
   return (
     <ul className="section-category-list">
-      <Link href="/blogs" className="py-2">همه</Link>
+      <Link className="text-secondary-400 py-2" href="/blogs">
+        همه
+      </Link>
       {categories.map((category) => {
         return (
           <li key={category._id} className="py-2">
-            <Link href={`/blogs/category/${category.slug}`}>
+            <Link
+              className="text-secondary-400"
+              href={`/blogs/category/${category.slug}`}
+            >
               {category.title}
             </Link>
           </li>

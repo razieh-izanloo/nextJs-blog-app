@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { BtnBack } from "@/components/btnBack";
-import "./not-found.scss";
+import "./not-found.css";
 
 export const metadata = {
   title: "صفحه پیدا نشد",

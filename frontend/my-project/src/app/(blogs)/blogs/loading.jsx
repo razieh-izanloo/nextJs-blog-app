@@ -1,13 +1,12 @@
 import { Spinner } from "@/components/spinner/spinner";
-import "./loading.scss";
 
 function Loading() {
   return (
-    <div className="d-flex justify-content-center align-items-center h-100">
-      <div className="text-center">
-        <span className="d-block text-loading">در حال بارگذاری اطلاعات</span>
-        <Spinner />
-      </div>
+    <div className="grid items-center justify-center gap-x-4">
+      <span className="text-lg text-secondary-500">
+        در حال بارگذاری اطلاعات
+      </span>
+      <Spinner />
     </div>
   );
 }

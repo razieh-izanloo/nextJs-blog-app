@@ -25,14 +25,12 @@ export const PostRow = ({ post, index }) => {
       <td>{author.name}</td>
       <td>{toLocalDateShort(createdAt)}</td>
       <td>
-        <span
-          className={`rounded-4 d-block px-2 py-1 ${statusStyle[type].className}`}
-        >
+       <span className={`badge ${statusStyle[type].className}`}>
           {statusStyle[type].label}
         </span>
       </td>
       <td>
-        <div className="d-flex align-items-center gap-3">
+        <div className="flex items-center gap-3">
           <UpdatePost id={post._id} />
           <DeletePost post={post} />
         </div>

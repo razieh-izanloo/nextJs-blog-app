@@ -8,6 +8,7 @@ import { Button } from "@/components/button";
 import { Modal } from "@/components/modal";
 import { CommentForm } from "./commentForm";
 import { Comment } from "./comment";
+import "./postComment.css";
 
 export const PostComment = ({ post: { comments, _id: postId } }) => {
   const [open, setOpen] = useState(false);
@@ -50,7 +51,7 @@ export const PostComment = ({ post: { comments, _id: postId } }) => {
           <span>ثبت نظر جدید</span>
         </Button>
       </div>
-      <div className="space-y-8 post-comments bg-secondary-0 rounded-xl py-6 px-3 lg:px-6 ">
+      <div className="space-y-8 post-comments bg-secondary-0 rounded-xl py-6 px-3 lg:px-6">
         {comments.length > 0 ? (
           comments.map((comment) => {
             return (

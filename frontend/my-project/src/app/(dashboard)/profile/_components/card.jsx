@@ -14,21 +14,16 @@ export const Card = ({ title, value, type }) => {
   const Icon = iconMap[type];
 
   return (
-    <div className="col-sm-4 my-2">
-      <div className="section-card shadow-sm">
-      <div className="d-flex gap-1 align-items-center py-2">
-        {Icon ? <Icon className="icon-card" /> : null}
-        <h3 className="mb-0">{title}</h3>
+    <div className="rounded-xl bg-secondary-50 p-2 shadow-sm">
+      <div className="flex p-4 text-secondary-600">
+        {Icon && <Icon className="h-5 w-5" />}
+        <h3 className="mr-2 text-sm font-medium">{title}</h3>
       </div>
-      <div className="box-number">
       <p
         className={`truncate rounded-xl bg-secondary-0 px-4 py-8 text-center text-2xl text-secondary-500`}
       >
         {value}
       </p>
-      </div>
-
-      </div>
     </div>
   );
 };

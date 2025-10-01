@@ -1,11 +1,13 @@
 import Image from "next/image";
 import "./layout.scss";
 
+
+
 export default function AuthLayout({ children }) {
   return (
-    <div className="container">
-      <div className="w-100 d-flex col-md-4 col-lg-3 bg-white">
-        <div className="d-none d-md-flex justify-content-center align-items-center col-md-8">
+    <div>
+      <div className="grid grid-cols-12  bg-secondary-0">
+        <div className="hidden md:flex md:col-span-6 xl:col-span-8 justify-center items-center">
           <Image
             src="/images/img-auth-page.jpg"
             alt="login"
@@ -13,8 +15,8 @@ export default function AuthLayout({ children }) {
             height="300"
           />
         </div>
-        <div className="section-auth px-4 col-md-4">
-          <div className="d-flex justify-content-center ">
+        <div className="flex col-span-12 justify-center md:col-span-6 flex-col xl:col-span-4 py-8 h-screen ">
+          <div className="flex justify-center ">
             <Image
               src="/images/logo.png"
               className="my-4"
