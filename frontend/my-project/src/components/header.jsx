@@ -1,6 +1,6 @@
 "use client";
 
-import { NavLink } from "./header/navLink";
+import { NavLink } from "./navLink";
 import { useAuth } from "@/context/authContext";
 // import { LanguageSelector } from "@/components/languageSelector/languageSelector";
 

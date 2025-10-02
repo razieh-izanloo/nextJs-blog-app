@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Link from "next/link";
-import { RHFTextField } from "@/components/textField/RHFTextField";
+import { RHFTextField } from "@/components/RHFTextField";
 import { Button } from "@/components/button";
 import { useAuth } from "@/context/authContext";
 
@@ -37,10 +37,10 @@ function Signup() {
 
   return (
     <div>
-      <h1 className="text-center fs-3 mb-4">ثبت نام</h1>
+      <h1 className="text-center text-2xl mb-4">ثبت نام</h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="d-flex flex-column gap-3"
+        className="flex flex-col gap-3"
       >
         <RHFTextField
           label="نام و نام خانوادگی"
@@ -70,12 +70,12 @@ function Signup() {
           type="submit"
           disable={isLoading.toString()}
           variant="primary"
-          className="w-100"
+          className="w-full"
         >
           تایید
         </Button>
       </form>
-      <Link href="/signin" className="link-footer mt-4 text-center">
+      <Link href="/signin" className="mt-4 text-center">
         ورود
       </Link>
     </div>

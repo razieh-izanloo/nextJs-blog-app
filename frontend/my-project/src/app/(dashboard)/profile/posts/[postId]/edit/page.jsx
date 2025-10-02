@@ -1,4 +1,4 @@
-import Breadcrumbs from "@/components/breadcrumbs/breadcrumbs";
+import Breadcrumbs from "@/components/breadcrumbs";
 import { getPostById } from "@/services/postServices";
 import { notFound } from "next/navigation";
 import { CreatePostForm } from "../../create/_/createPostForm";

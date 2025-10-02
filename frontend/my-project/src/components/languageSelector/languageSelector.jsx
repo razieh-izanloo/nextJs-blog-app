@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import "./languageSelector.scss";
+import "./languageSelector.css";
 import { useGetCurrentLang } from "@/hooks/useGetCurrentLang";
 
 export const LanguageSelector = () => {

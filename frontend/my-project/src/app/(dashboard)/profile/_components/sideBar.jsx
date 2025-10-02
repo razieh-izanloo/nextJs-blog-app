@@ -25,11 +25,11 @@ export const SideBar = ({ onClose }) => {
           <HomeIcon className="w-6 h-6" />
           <span> نکست بلاگ</span>
         </Link>
-        <ButtonIcon onClick={onClose} className="block md:none">
+        <ButtonIcon onClick={onClose} className="block md:hidden">
           <XMarkIcon />
         </ButtonIcon>
       </div>
-      <div className="overflow-y-auto flex-fill">
+      <div className="flex-fill">
         <SideBarNavs />
         <div
           // onClick={logoutHandler}

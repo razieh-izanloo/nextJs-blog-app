@@ -1,4 +1,3 @@
-import "./RHFTextField.scss";
 
 export const RHFTextField = ({
   type = "text",
@@ -15,23 +14,23 @@ export const RHFTextField = ({
   const hasError = !!(errors && errorMessages);
   return (
     <div
-      className="textField"
+      className="text-[15px]"
     >
-      <label htmlFor={name} className="mb-2 d-block">
+      <label htmlFor={name} className="mb-2 block">
         {label}
-        {isRequired && <span className="text-danger">*</span>}
+        {isRequired && <span className="text-red-600">*</span>}
       </label>
       <input
         autoComplete="off"
         type={type}
         id={name}
         dir={dir}
-        className={`textField__input ${hasError ? "textField--invalid" : ""}`}
+        className={`textField__input ${hasError ? "border-red-600" : ""}`}
         {...register(name, validationSchema)}
         {...rest}
       />
       {errors && errors[name] && (
-        <small className="text-danger mt-2">
+        <small className="text-red-600 mt-2">
           {errors[name]?.message}
         </small>
       )}

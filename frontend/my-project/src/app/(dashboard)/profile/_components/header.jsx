@@ -6,7 +6,7 @@ import { ButtonIcon } from "@/components/buttonIcon";
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { SideBar } from "./sideBar";
-import Drawer from "@/components/drawer/drawer";
+import Drawer from "@/components/drawer";
 
 export const Header = ({}) => {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);

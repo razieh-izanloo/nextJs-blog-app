@@ -1,8 +1,8 @@
-import "./spinner.scss";
+import "./spinner.css";
 
 export const Spinner = () => {
   return (
-    <div className="w-100 d-flex justify-content-center">
+    <div className="w-full flex justify-center">
       <div className="lds-roller">
         {Array.from({ length: 8 }).map((_, index) => (
           <div key={index}></div>

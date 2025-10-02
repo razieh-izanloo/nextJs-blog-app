@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import "./drawer.scss";
 
 const Drawer = ({ open, onClose, children }) => {
   const [mounted, setMounted] = useState(false);
@@ -15,17 +14,21 @@ const Drawer = ({ open, onClose, children }) => {
   return createPortal(
     <>
       <div
-        className={`close-drawer ${open ? "isOpen" : "d-none"}`}
+        className={`fixed bottom-0 left-0 top-0 right-0 h-screen opacity-5 backdrop-blur-xs bg-black 
+          ${
+          open ? "block" : "hidden"
+        }`
+      }
         onClick={onClose}
       ></div>
       <div
-        className={`section-drawer ${open ? "isOpen" : "d-none d-md-block"}`}
+        className={`bg-white fixed top-0 right-0 transition-transform w-[250px] h-full ${open ? "translate-x-0" : "hidden md:block"}`}
         onClick={(event) => {
           event.preventDefault();
           event.stopPropagation();
         }}
       >
-        <div className="mh-100 overflow-y-auto">{children}</div>
+        <div className="min-h-full overflow-y-auto">{children}</div>
       </div>
     </>,
     document.body

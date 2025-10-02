@@ -1,4 +1,4 @@
-import { Empty } from "@/components/empty/empty";
+import { Empty } from "@/components/empty";
 import { Table } from "@/components/table/table";
 import { getPosts } from "@/services/postServices";
 import { PostRow } from "./postRow";

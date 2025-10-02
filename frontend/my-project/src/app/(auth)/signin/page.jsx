@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Link from "next/link";
-import { RHFTextField } from "@/components/textField/RHFTextField";
+import { RHFTextField } from "@/components/RHFTextField";
 import { Button } from "@/components/button";
 import { useAuth } from "@/context/authContext";
 
@@ -59,7 +59,7 @@ const SigninPage = () => {
           type="submit"
           disable={isLoading.toString()}
           variant="primary"
-          className="w-100"
+          className="w-full"
         >
           تایید
         </Button>

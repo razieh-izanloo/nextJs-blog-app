@@ -1,10 +1,10 @@
 "use client";
 import { Button } from "@/components/button";
 import { ButtonIcon } from "@/components/buttonIcon";
-import { FileInput } from "@/components/fileInput/fileInput";
-import { RHFSelect } from "@/components/RHFSelect/RHFSelect";
+import { FileInput } from "@/components/fileInput";
+import { RHFSelect } from "@/components/RHFSelect";
 import { Spinner } from "@/components/spinner/spinner";
-import { RHFTextField } from "@/components/textField/RHFTextField";
+import { RHFTextField } from "@/components/RHFTextField";
 import { useCategories } from "@/hooks/useCategories";
 import { useCreatePost } from "@/hooks/useCreatePost";
 import { XMarkIcon } from "@heroicons/react/24/outline";

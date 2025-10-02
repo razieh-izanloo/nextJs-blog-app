@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { generatePagination } from "@/utils/generatePagination";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
-import "./pagination.scss";
+import "./pagination.css";
 
 import { usePathname, useSearchParams } from "next/navigation";
 
@@ -29,7 +29,7 @@ export default function Pagination({ totalPages }) {
         isDisabled={currentPage <= 1}
       />
 
-      <div className="d-flex">
+      <div className="flex">
         {allPages.map((page, index) => {
           let position;
           if (index === 0) position = "first";

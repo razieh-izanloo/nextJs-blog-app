@@ -1,4 +1,4 @@
-import Breadcrumbs from "@/components/breadcrumbs/breadcrumbs";
+import Breadcrumbs from "@/components/breadcrumbs";
 import { CreatePostForm } from "./_/createPostForm";
 
 const CreatePostPage = () => {
