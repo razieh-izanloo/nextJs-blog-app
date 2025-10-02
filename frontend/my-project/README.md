@@ -1,6 +1,7 @@
 In the backend folder:
 
 1 =>run this command: npm i
+
 2 => install app mongodb-windows & mongodb-compass on the pc.
 3 => create a folder called 'data' in drive C. and inside data, create a folder called 'db'.
 4 => go to this path: C:\Program Files\MongoDB\Server\7.0\bin
