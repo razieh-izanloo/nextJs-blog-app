@@ -9,7 +9,7 @@ export const metadata = {
 
 function BlogLayout({ children }) {
   return (
-    <div>
+    <div className="px-3">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-secondary-700 mb-12 items-center">
         <h1 className="text-lg font-bold">لیست بلاگ ها</h1>
         <Search />

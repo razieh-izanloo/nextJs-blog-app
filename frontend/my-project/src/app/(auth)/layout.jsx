@@ -12,7 +12,7 @@ export default function AuthLayout({ children }) {
             height="300"
           />
         </div>
-        <div className="flex col-span-12 justify-center md:col-span-6 flex-col xl:col-span-4 py-8 h-screen md:shadow ">
+        <div className="flex col-span-12 justify-center md:col-span-6 flex-col xl:col-span-4 py-8 h-screen md:shadow px-3">
           <div className="flex justify-center ">
             <Image
               src="/images/logo.png"

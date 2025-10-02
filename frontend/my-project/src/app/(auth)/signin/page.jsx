@@ -35,7 +35,7 @@ const SigninPage = () => {
       <h1 className="text-center fs-3 mb-4">ورود</h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="d-flex flex-column gap-3"
+        className="flex flex-col gap-3"
       >
         <RHFTextField
           label="ایمیل"
@@ -64,7 +64,7 @@ const SigninPage = () => {
           تایید
         </Button>
       </form>
-      <Link href="/signup" className="link-footer mt-4 text-center">
+      <Link href="/signup" className="mt-4 text-center">
         ثبت نام
       </Link>
     </div>

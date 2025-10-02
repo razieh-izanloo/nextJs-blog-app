@@ -28,7 +28,7 @@ const SinglePost = async ({ params }) => {
   if (!post) notFound();
 
   return (
-    <div className="text-secondary-600 max-w-screen-md mx-auto">
+    <div className="text-secondary-600 max-w-screen-md mx-auto px-3">
       <h1 className="text-secondary-700 text-2xl font-bold mb-8">
         {post.title}
       </h1>
