@@ -8,6 +8,7 @@ export const Avatar = ({ src, width = 24 }) => {
       height={width}
       className="rounded-full ring-1 ring-secondary-200"
       alt={src || ""}
-    /> 
+      onError={(e) => (e.currentTarget.src = "/images/defaultAvatar.png")}
+    />
   );
 };
