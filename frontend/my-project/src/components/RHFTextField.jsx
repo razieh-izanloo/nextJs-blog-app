@@ -16,7 +16,7 @@ export const RHFTextField = ({
     <div
       className="text-[15px]"
     >
-      <label htmlFor={name} className="mb-2 block">
+      <label htmlFor={name} className="mb-2 block text-secondary-600">
         {label}
         {isRequired && <span className="text-red-600">*</span>}
       </label>

@@ -70,12 +70,12 @@ function Signup() {
           type="submit"
           disable={isLoading.toString()}
           variant="primary"
-          className="w-full"
+          className="w-full mt-3"
         >
           تایید
         </Button>
       </form>
-      <Link href="/signin" className="mt-4 text-center">
+      <Link href="/signin" className="mt-5 block">
         ورود
       </Link>
     </div>

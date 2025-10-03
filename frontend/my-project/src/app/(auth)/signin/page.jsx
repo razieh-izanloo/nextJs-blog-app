@@ -59,12 +59,12 @@ const SigninPage = () => {
           type="submit"
           disable={isLoading.toString()}
           variant="primary"
-          className="w-full"
+          className="w-full mt-3"
         >
           تایید
         </Button>
       </form>
-      <Link href="/signup" className="mt-4 text-center">
+      <Link href="/signup" className="mt-5 block">
         ثبت نام
       </Link>
     </div>

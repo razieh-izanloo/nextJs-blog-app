@@ -14,7 +14,6 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
-import "./style.scss";
 import { imageUrlToFile } from "@/utils/fileFormatter";
 import { useEditPost } from "@/hooks/useEditPost";
 
@@ -128,9 +127,9 @@ export const CreatePostForm = ({ postToEdit = {} }) => {
   };
 
   return (
-    <div className="row">
+    <div className="grid grid-cols-12">
       <form
-        className="form col-sm-8 col-lg-6 col-xl-5 col-xxl-4"
+        className="form grid col-span-12 gap-5 bg-secondary-0 sm:col-span-8 lg:col-span-6 xl:col-span-5 xxl:col-span-4 p-7 rounded-xs"
         onSubmit={handleSubmit(onSubmit)}
       >
         <RHFTextField
@@ -197,9 +196,9 @@ export const CreatePostForm = ({ postToEdit = {} }) => {
         />
 
         {coverImageUrl && (
-          <div id="section-cover-image">
+          <div className="relative h-[200px] w-[200px]">
             <Image
-              className="object-fit-cover"
+              className="object-cover"
               fill
               alt="cover-iamge"
               src={coverImageUrl}
@@ -211,6 +210,7 @@ export const CreatePostForm = ({ postToEdit = {} }) => {
                 setValue("coverImage", null);
               }}
               variant="red"
+              className="w-5 h-5 left-0 absolute"
             >
               <XMarkIcon />
             </ButtonIcon>
@@ -221,7 +221,7 @@ export const CreatePostForm = ({ postToEdit = {} }) => {
           {isCreating ? (
             <Spinner />
           ) : (
-            <Button variant="primary" type="submit" className="w-100">
+            <Button variant="primary" type="submit" className="w-full">
               تایید
             </Button>
           )}
