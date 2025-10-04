@@ -11,7 +11,7 @@ import Drawer from "@/components/drawer";
 export const Header = ({}) => {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
   const { user, isLoading } = useAuth();
-console.log(user)
+
   return (
     <header
       className={`bg-secondary-0 ${isLoading ? "bg-opacity-30 blur-md" : ""}`}
